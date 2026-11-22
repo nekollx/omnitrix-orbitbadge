@@ -8,7 +8,7 @@ A screen-accurate, interactive Omnitrix firmware for the **OrbitBadge** (ESP32-S
 
 You do **not** need Arduino IDE or any programming tools to install the default firmware:
 
-1. Open the **[Omnitrix Web Installer](https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/)** in **Google Chrome** or **Microsoft Edge** (Windows or macOS).
+1. Open the **[Omnitrix Web Installer](https://nekollx.github.io/omnitrix-orbitbadge/)** in **Google Chrome** or **Microsoft Edge** (Windows or macOS).
 2. Switch the physical **Power Slide Switch ON** on your OrbitBadge (required to power the speaker amplifier) and plug it into your computer with a data USB-C cable.
 3. Click **INSTALL OMNITRIX**, choose the **ESP32-S3 / USB JTAG** serial port, and wait ~30 seconds for flashing to finish.
 
