@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omnitrix OS — 1-Click Web Installer</title>
+  <script type="module" src="https://unpkg.com"></script>
+  <style>
+    :root {
+      --omni-green: #b9ff37;
+      --bg-dark: #0d1117;
+      --card-bg: #161b22;
+      --text-main: #e6edf3;
+      --text-muted: #8b949e;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 560px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 2px solid #30363d;
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    }
+    .badge-ring {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      border: 6px solid #484f58;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 24px rgba(185, 255, 55, 0.35);
+    }
+    .hourglass {
+      width: 0;
+      height: 0;
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      border-top: 26px solid var(--omni-green);
+      border-bottom: 26px solid var(--omni-green);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: var(--omni-green);
+    }
+    p.subtitle {
+      margin: 0 0 24px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+    .steps {
+      text-align: left;
+      background: #0d1117;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 26px;
+      border: 1px solid #30363d;
+    }
+    .steps li {
+      margin-bottom: 10px;
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+    .steps li:last-child {
+      margin-bottom: 0;
+    }
+    esp-web-install-button {
+      --esp-tools-button-color: #b9ff37;
+      --esp-tools-button-text-color: #000000;
+    }
+    .note {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    a {
+      color: var(--omni-green);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge-ring">
+      <div class="hourglass"></div>
+    </div>
+    <h1>OMNITRIX OS</h1>
+    <p class="subtitle">
+      1-Click Browser Firmware Installer for the <strong>OrbitBadge (ESP32-S3)</strong>.<br />
+      No coding, drivers, or Arduino IDE required.
+    </p>
+
+    <ol class="steps">
+      <li>Open this page in <strong>Google Chrome</strong>, <strong>Microsoft Edge</strong>, or <strong>Opera</strong> on a PC or Mac.</li>
+      <li>Turn your OrbitBadge's <strong>Power Slide Switch ON</strong> and connect it via a data-capable USB-C cable.</li>
+      <li>Click <strong>Install Omnitrix</strong> below, select the <strong>USB JTAG / Serial Debug Unit</strong> port, and click <strong>Install</strong>.</li>
+    </ol>
+
+    <esp-web-install-button manifest="./manifest.json">
+      <button slot="activate" style="background:#b9ff37;color:#000;font-weight:800;font-size:1.05rem;padding:14px 32px;border:none;border-radius:999px;cursor:pointer;letter-spacing:0.5px;">
+        INSTALL OMNITRIX
+      </button>
+      <span slot="unsupported">
+        Your browser does not support Web Serial. Please open this page in Chrome or Edge on desktop.
+      </span>
+      <span slot="not-allowed">
+        Web Serial requires HTTPS or localhost.
+      </span>
+    </esp-web-install-button>
+
+    <p class="note">
+      Want to add custom alien sprites or build from source?
+      <a href="https://github.com">View the GitHub Guide &amp; Controls</a>
+    </p>
+  </div>
+</body>
+</html>
